@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========== CARREGAR PRODUTOS DA API ==========
 async function carregarProdutosDoSheet() {
   try {
+    // Mostrar loading
+    const loading = document.getElementById('loading');
+    if (loading) loading.classList.remove('oculto');
+    
     console.log('📥 Carregando produtos de:', CONFIG.GOOGLE_SHEET_URL);
     const response = await fetch(CONFIG.GOOGLE_SHEET_URL);
     
@@ -38,6 +42,7 @@ async function carregarProdutosDoSheet() {
     
     if (!dados || dados.length === 0) {
       console.warn('⚠️ Nenhum produto encontrado na planilha');
+      if (loading) loading.classList.add('oculto');
       alert('Nenhum produto foi encontrado. Verifique a planilha.');
       return;
     }
@@ -59,9 +64,20 @@ async function carregarProdutosDoSheet() {
     produtosFiltrados = [...produtos];
     inicializarFiltros();
     renderizarCards();
+    
+    // Esconder loading com delay pequeno para transição suave
+    setTimeout(() => {
+      if (loading) loading.classList.add('oculto');
+    }, 300);
+    
   } catch (error) {
     console.error('❌ Erro ao carregar produtos:', error);
     console.error('URL tentada:', CONFIG.GOOGLE_SHEET_URL);
+    
+    // Esconder loading e mostrar erro
+    const loading = document.getElementById('loading');
+    if (loading) loading.classList.add('oculto');
+    
     alert(`Erro ao carregar produtos:\n${error.message}\n\nVerifique se a planilha está pública e se config.js está correto.`);
   }
 }
