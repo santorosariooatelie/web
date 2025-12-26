@@ -8,6 +8,16 @@ let filtroMaterial = '';
 let filtroCor = '';
 let produtoEmFoco = null;
 
+// ========== CONFIGURAÇÕES COM FALLBACK ==========
+// Se CONFIG não foi carregado de config.js, usar valores padrão
+if (typeof CONFIG === 'undefined') {
+  window.CONFIG = {
+    WHATSAPP_NUMBER: '5511999999999',
+    GOOGLE_SHEET_URL: 'https://opensheet.elk.sh/1rn0VFaxpFQX7gaUQnKnXdFC_rm0hGDE9hdPnRDfAX1Q/1'
+  };
+  console.warn('⚠️ config.js não encontrado. Usando valores padrão. Crie um config.js com seus dados reais.');
+}
+
 // ========== INICIALIZAÇÃO ==========
 document.addEventListener('DOMContentLoaded', () => {
   carregarProdutosDoSheet();
@@ -16,8 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
 // ========== CARREGAR PRODUTOS DA API ==========
 async function carregarProdutosDoSheet() {
   try {
+    console.log('📥 Carregando produtos de:', CONFIG.GOOGLE_SHEET_URL);
     const response = await fetch(CONFIG.GOOGLE_SHEET_URL);
+    
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+    
     const dados = await response.json();
+    console.log('✅ Produtos carregados:', dados.length, 'itens');
+    
+    if (!dados || dados.length === 0) {
+      console.warn('⚠️ Nenhum produto encontrado na planilha');
+      alert('Nenhum produto foi encontrado. Verifique a planilha.');
+      return;
+    }
     
     // Mapear dados da API para o formato da aplicação
     produtos = dados.map(item => ({
@@ -37,8 +60,9 @@ async function carregarProdutosDoSheet() {
     inicializarFiltros();
     renderizarCards();
   } catch (error) {
-    console.error('Erro ao carregar produtos:', error);
-    alert('Erro ao carregar produtos. Por favor, recarregue a página.');
+    console.error('❌ Erro ao carregar produtos:', error);
+    console.error('URL tentada:', CONFIG.GOOGLE_SHEET_URL);
+    alert(`Erro ao carregar produtos:\n${error.message}\n\nVerifique se a planilha está pública e se config.js está correto.`);
   }
 }
 
