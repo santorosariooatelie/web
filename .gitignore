@@ -1,5 +1,4 @@
 # Configurações sensíveis
-
 # Node modules (se usar em futuro)
 node_modules/
 package-lock.json
