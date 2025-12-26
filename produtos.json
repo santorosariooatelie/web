@@ -1,0 +1,82 @@
+[
+  {
+    "id": "TR001",
+    "santo": "Nossa Senhora Aparecida",
+    "material": "Cristal",
+    "tamanho": "6mm",
+    "preco": 45.00,
+    "imagem": "imagens/TR001.png",
+    "disponibilidade": true,
+    "descricao": "Terço de cristal azul em homenagem à Nossa Senhora Aparecida. Contas translúcidas com brilho natural, acabamento delicado e medalha prata. Ideal para devoção diária."
+  },
+  {
+    "id": "TR002",
+    "santo": "Santo Antônio",
+    "material": "Madeira",
+    "tamanho": "8mm",
+    "preco": 38.00,
+    "imagem": "imagens/TR002.png",
+    "disponibilidade": true,
+    "descricao": "Terço em madeira de cedro com aroma natural. Contas polidas suavemente para conforto nas mãos. Santo Antônio padroeiro dos necessitados."
+  },
+  {
+    "id": "TR003",
+    "santo": "São José",
+    "material": "Ônix",
+    "tamanho": "8mm",
+    "preco": 52.00,
+    "imagem": "imagens/TR003.png",
+    "disponibilidade": true,
+    "descricao": "Terço em ônix preto polido. Contas brilhantes e elegantes em homenagem a São José, protetor da família. Material durável e refinado."
+  },
+  {
+    "id": "TR004",
+    "santo": "Nossa Senhora das Graças",
+    "material": "Pérola",
+    "tamanho": "6mm",
+    "preco": 65.00,
+    "imagem": "imagens/TR004.png",
+    "disponibilidade": true,
+    "descricao": "Terço em pérola branca. Contas com lustre natural, entalhadas delicadamente. Dedicado a Nossa Senhora das Graças, símbolo de elegância e proteção."
+  },
+  {
+    "id": "TR005",
+    "santo": "Santa Terezinha",
+    "material": "Quartzo Rosa",
+    "tamanho": "8mm",
+    "preco": 55.00,
+    "imagem": "imagens/TR005.png",
+    "disponibilidade": true,
+    "descricao": "Terço em quartzo rosa translúcido. Pedra da suavidade e amor. Dedicado a Santa Terezinha do Menino Jesus, a santa das pequenas coisas."
+  },
+  {
+    "id": "TR006",
+    "santo": "São Francisco",
+    "material": "Madeira de Oliveira",
+    "tamanho": "10mm",
+    "preco": 48.00,
+    "imagem": "imagens/TR006.png",
+    "disponibilidade": true,
+    "descricao": "Terço em madeira de oliveira. Contas grandes e acessíveis para pessoas com dificuldade motora. Dedicado a São Francisco de Assis, protetor dos animais e natureza."
+  },
+  {
+    "id": "TR007",
+    "santo": "Nossa Senhora de Fátima",
+    "material": "Ágata",
+    "tamanho": "8mm",
+    "preco": 58.00,
+    "imagem": "imagens/TR007.png",
+    "disponibilidade": false,
+    "descricao": "Terço em ágata variegada com padrões naturais. Dedicado a Nossa Senhora de Fátima, Nossa Senhora da Paz. Disponibilidade limitada - sob encomenda."
+  },
+  {
+    "id": "TR008",
+    "santo": "Sagrado Coração de Maria",
+    "material": "Madeira de Oliveira",
+    "tamanho": "8mm",
+    "preco": 68.00,
+    "imagem": "imagens/TR008.png",
+    "disponibilidade": true,
+    "descricao": "Terço premium em madeira de oliveira envelhecida. Contas entalhadas artisticamente. Dedicado ao Sagrado Coração de Maria, símbolo máximo de amor divino."
+  }
+]

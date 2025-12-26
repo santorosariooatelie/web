@@ -1,0 +1,18 @@
+# Configurações sensíveis
+config.js
+
+# Node modules (se usar em futuro)
+node_modules/
+package-lock.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
